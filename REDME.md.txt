@@ -1,0 +1,3 @@
+Dans le dossier Kata Carrefour il contient les capteurs d'écran des API demandées avec les résultats.
+
+Product Api.postman_collection => c'est un pointeur Postman vous pouvez l'ouvrir avec Postman et tester les API demandées

@@ -1,0 +1,12 @@
+fr\carrefourkata\process\ProductProcessImpl.class
+fr\carrefourkata\entity\Product.class
+fr\carrefourkata\dao\ProductRepository.class
+fr\carrefourkata\dto\ProductDto.class
+fr\carrefourkata\process\mapper\ProductMapper.class
+fr\carrefourkata\controller\ProductController.class
+fr\carrefourkata\CarrefourKataApplication.class
+fr\carrefourkata\process\ProductProcess.class
+fr\carrefourkata\service\ProductService.class
+fr\carrefourkata\service\ProductServiceImpl.class
+fr\carrefourkata\process\mapper\ProductMapperImpl.class
+fr\carrefourkata\controller\ProductControllerImpl.class
