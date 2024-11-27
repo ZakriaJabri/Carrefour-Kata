@@ -28,4 +28,6 @@ public interface ProductController {
 
     @ResponseStatus(HttpStatus.OK)
     ResponseEntity<Void> updateProduct(@PathVariable int productId, @RequestBody ProductDto productDto);
+
+    ResponseEntity<String> publishMessage(@PathVariable String messageProduit);
 }

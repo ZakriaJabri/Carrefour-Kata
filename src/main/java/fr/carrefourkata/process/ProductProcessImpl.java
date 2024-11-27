@@ -62,7 +62,6 @@ public class ProductProcessImpl implements ProductProcess {
             productDB.setName(productPatch.getName());
             productDB.setDescription(productPatch.getDescription());
             productDB.setImage(productPatch.getImage());
-            productDB.setCategory(productPatch.getCategory());
             productDB.setPrice(productPatch.getPrice());
             productDB.setQuantity(productPatch.getQuantity());
             productDB.setInternalReference(productPatch.getInternalReference());

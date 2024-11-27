@@ -14,5 +14,5 @@ public interface ProductMapper {
 
     Product productDtoToProduct(ProductDto productDto);
     ProductDto productToProductDto(Product product);
-    List<ProductDto> productListToProductDtoList(Iterable<Product> productList);
+    List<ProductDto> productListToProductDtoList(List<Product> productList);
 }

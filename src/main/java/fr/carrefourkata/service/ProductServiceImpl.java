@@ -3,6 +3,8 @@ package fr.carrefourkata.service;
 import fr.carrefourkata.dao.ProductRepository;
 import fr.carrefourkata.entity.Product;
 import fr.carrefourkata.process.mapper.ProductMapper;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,4 +50,10 @@ public class ProductServiceImpl implements ProductService {
             return false;
         }
     }
+
+  //  @Override
+  //  @KafkaListener(topics= "", groupId= "")
+  //  public String onMessageProduct(ConsumerRecord messageProduit) {
+
+//    }
 }
