@@ -23,7 +23,7 @@ public class ProductDto implements Serializable {
     private Long shellId;
     private String inventoryStatus;
     private int rating;
-    private int order_id;
+    private Long order_id;
     private LocalDateTime  createdAt;
     private LocalDateTime updatedAt;
 
@@ -31,7 +31,7 @@ public class ProductDto implements Serializable {
 
     }
 
-    public ProductDto(String code, String name, String description, String image, CategoryDTO category, float price, int quantity, String internalReference, Long shellId, String inventoryStatus, int rating, int order_id, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public ProductDto(String code, String name, String description, String image, CategoryDTO category, float price, int quantity, String internalReference, Long shellId, String inventoryStatus, int rating, Long order_id, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.code = code;
         this.name = name;
         this.description = description;
@@ -137,11 +137,11 @@ public class ProductDto implements Serializable {
         this.rating = rating;
     }
 
-    public int getOrder_id() {
+    public Long getOrder_id() {
         return order_id;
     }
 
-    public void setOrder_id(int order_id) {
+    public void setOrder_id(Long order_id) {
         this.order_id = order_id;
     }
 
@@ -149,23 +149,15 @@ public class ProductDto implements Serializable {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof ProductDto that)) return false;
-        return Float.compare(that.price, price) == 0 && quantity == that.quantity && rating == that.rating && order_id == that.order_id && Objects.equals(code, that.code) && Objects.equals(name, that.name) && Objects.equals(description, that.description) && Objects.equals(image, that.image) && Objects.equals(category, that.category) && Objects.equals(internalReference, that.internalReference) && Objects.equals(shellId, that.shellId) && Objects.equals(inventoryStatus, that.inventoryStatus) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+        return Float.compare(that.price, price) == 0 && quantity == that.quantity && rating == that.rating && Objects.equals(code, that.code) && Objects.equals(name, that.name) && Objects.equals(description, that.description) && Objects.equals(image, that.image) && Objects.equals(category, that.category) && Objects.equals(internalReference, that.internalReference) && Objects.equals(shellId, that.shellId) && Objects.equals(inventoryStatus, that.inventoryStatus) && Objects.equals(order_id, that.order_id) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override

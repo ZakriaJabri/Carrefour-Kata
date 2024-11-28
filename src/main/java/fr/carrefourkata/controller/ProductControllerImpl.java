@@ -18,15 +18,9 @@ public class ProductControllerImpl implements ProductController {
 
     private final ProductProcess productProcess;
 
-    private KafkaTemplate<Integer, String> kafkaTemplate;
 
-    @Value("${topic.name.producer}")
-    private String topic;
-
-
-    public ProductControllerImpl(ProductProcess productProcess, KafkaTemplate<Integer, String> kafkaTemplate) {
+    public ProductControllerImpl(ProductProcess productProcess) {
         this.productProcess = productProcess;
-        this.kafkaTemplate = kafkaTemplate;
     }
 
     @Override
@@ -34,7 +28,6 @@ public class ProductControllerImpl implements ProductController {
     public ResponseEntity<List<ProductDto>> getAllProducts() {
         return ResponseEntity.ok().body(productProcess.getAllProducts());
     }
-
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/product")
     @Override
@@ -71,6 +64,5 @@ public class ProductControllerImpl implements ProductController {
        // kafkaTemplate.send(topic, message);
         return null;
     }
-
 
 }

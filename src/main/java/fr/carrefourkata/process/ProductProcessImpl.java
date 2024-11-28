@@ -15,7 +15,6 @@ import java.util.Optional;
 public class ProductProcessImpl implements ProductProcess {
 
     private final ProductService productService;
-
     private final ProductMapper productMapper;
 
 
@@ -24,20 +23,16 @@ public class ProductProcessImpl implements ProductProcess {
         this.productMapper = productMapper;
     }
 
-
     @Override
     public List<ProductDto> getAllProducts() {
         List<Product> productList = productService.getAllProducts() ;
         return productMapper.productListToProductDtoList(productList) ;
     }
 
-
     @Override
     public void addProduct(ProductDto productDto) {
         Product product = productMapper.productDtoToProduct(productDto);
-        product.setCreatedAt(LocalDateTime.now());
         productService.saveProduct(product);
-
     }
 
     @Override
@@ -50,27 +45,15 @@ public class ProductProcessImpl implements ProductProcess {
     public void deleteProduct(int id) {
         Optional<Product> product = productService.getProduct(id);
          productService.deleteProduct(product.get());
-
     }
 
     @Override
     public void updateProduct(int productId, ProductDto product) {
         if(productService.ifExistProduct(productId)){
-            Product productDB = productService.getProduct(productId).get();
             Product productPatch = productMapper.productDtoToProduct(product);
-            productDB.setCode(productPatch.getCode());
-            productDB.setName(productPatch.getName());
-            productDB.setDescription(productPatch.getDescription());
-            productDB.setImage(productPatch.getImage());
-            productDB.setPrice(productPatch.getPrice());
-            productDB.setQuantity(productPatch.getQuantity());
-            productDB.setInternalReference(productPatch.getInternalReference());
-            productDB.setShellId(productPatch.getShellId());
-            productDB.setInventoryStatus(productPatch.getInventoryStatus());
-            productDB.setRating(productPatch.getRating());
-            productDB.setUpdatedAt(LocalDateTime.now());
-
-            productService.saveProduct(productDB);
+            productService.saveProduct(productPatch);
         }
     }
+
+
 }
